@@ -1,0 +1,1 @@
+Kör projektet genom att öppna commandline och kör kommandot: nodemon server.js 
