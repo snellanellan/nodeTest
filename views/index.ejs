@@ -1,0 +1,27 @@
+<head>
+    <title>NODE TEST ! FTW!</title>
+
+</head>
+
+<body>
+    <h1>IT'S ALIVE!!</h1>
+    <h2> Be aware...</h2>
+    <div class="form">
+        <form action="/nysida" method="post">
+            <input type="text" placeholder="username" name="username">
+            <input type="text" placeholder="password" name="password">
+
+            <button type="submit">Submitt knapp</button>
+        </form>
+    </div>
+    <div>
+        <ul>
+            <% for(let i=0; i<userdetails.length; i++) {%>
+            <li>
+                <span><%= userdetails[i].username %></span>
+                <span><%= userdetails[i].password %></span>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+</body>

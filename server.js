@@ -5,14 +5,24 @@ const MongoClient = require('mongodb').MongoClient;
 let db;
 const userDetails = 'user_details';
 
+app.set('view engine', 'ejs');
+
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 
 app.get('/', (request, response) => {
-    response.sendFile(__dirname + "/index.html");
+    //response.sendFile(__dirname + "/index.html");
     let what = db.collection(userDetails).find().toArray((error, results) => {
         console.log(results)
+        if(error){
+            console.log(error)
+        } else {
+            response.render('index.ejs', {
+                'userdetails': results 
+            })
+            console.log('här')
+        }
     })
 });
 
